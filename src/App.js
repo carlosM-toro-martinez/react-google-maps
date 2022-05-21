@@ -4,6 +4,7 @@ import {
   useQuery,
   gql
 } from "@apollo/client";
+import React from 'react';
 
 const PRUEBA = gql`
   query allCountries {countries{
@@ -22,11 +23,14 @@ function App() {
   if(error) return <p>Error</p>
 
   return (
-    data.countries.map(data => (
+    <React.Fragment>
+      <h1>dgrwegrweg</h1>
+      {data.countries.map(data => (
 
-      <StyledApp key={data.code}>{data.name}</StyledApp>
-    
-    ))
+        <StyledApp key={data.code}>{data.name}</StyledApp>
+      
+      ))} 
+    </React.Fragment>
   );
 }
 
